@@ -1,0 +1,23 @@
+# Only notebooks should be tracked within app folder
+app/data/**
+app/output/**
+
+# Readme's should be tracked in all directories
+!**/README.md
+
+# Notebook checkpoints have no place in git
+**/.ipynb_checkpoints/
+
+# Ignore the OS X trash
+**/.DS_Store
+
+# Ignore _pycache_
+**/__pycache__
+**/*.py[cod]
+**/*$py.class
+
+# VSCode cache
+**/.vscode
+
+# Swap-files
+**.swp

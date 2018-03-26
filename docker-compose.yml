@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  jupyter:
+    image: jupyter/datascience-notebook
+    ports:
+      - ${JUPYTER_PORTS}
+    volumes:
+      - .:${WORKING_DIR}
+    working_dir: ${WORKING_DIR}
+  redis:
+    image: redis
