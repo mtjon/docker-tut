@@ -1,0 +1,13 @@
+# Some copyright notice.
+FROM jupyter/datascience-notebook:2c80cf3537ca
+
+LABEL maintainer="Martin Tjon <martintjon@gmail.com>"
+
+USER $NB_USER
+
+# Install redis dependencies
+
+RUN conda install -y -q \
+    redis-py && \
+    conda clean -tipsy && \
+    fix-permissions $CONDA_DIR
