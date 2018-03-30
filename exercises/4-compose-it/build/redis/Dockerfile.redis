@@ -1,5 +1,0 @@
-FROM redis:latest
-
-LABEL maintainer="Martin Tjon <martintjon@gmail.com>"
-
-COPY src dest

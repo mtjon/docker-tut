@@ -2,27 +2,9 @@ version: '3.1'
 
 services:
   jupyter:
-    build:
-      context: ${JUPYTER_BUILDCONTEXT}
-      dockerfile: ${JUPYTER_DOCKERFILE}
     image: mtjon/redis-notebook
     ports:
       - ${JUPYTER_PORTS}
     volumes:
       - .:${WORKING_DIR}
     working_dir: ${WORKING_DIR}
-  redis:
-    image: redis
-    secrets:
-      - redis_password
-    environment:
-      REDIS_PASSWORD: /run/secrets/redis_password
-    volumes:
-      - redis-data:/data
-
-volumes:
-  redis-data:
-
-secrets:
-  redis_password:
-    file: ${REDIS_PASSWORD}
