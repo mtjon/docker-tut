@@ -1,0 +1,19 @@
+# Always be specifc in your images - especially in production - Docker will use the `:latest` tag by default.
+# Failing to do so may result in unexpected dependecy issues or new/ deprecated functions.
+FROM jupyter/datascience-notebook:2c80cf3537ca
+
+# Use label to add metadate to your image.
+LABEL maintainer='Martin Tjon <martin.tjon@kpn.com>'
+
+USER $NB_USER
+
+# Install redis dependencies
+# Note that these are several shell commands, concatenated into a single RUN
+
+RUN conda install -y -q \
+    redis-py && \
+    conda clean -tipsy && \
+    fix-permissions $CONDA_DIR
+
+# Set WORKDIR to the user's /work/ directory
+WORKDIR $HOME/work/

@@ -15,7 +15,7 @@ Docker commands are of the form:
 docker <command> <sub-command> (options)
 ```
 
-Those who have already been using docker for a while might be used to running commands like `docker run ...` or `docker images`. This was of the form:
+Those who have already been using docker for a while might be used to running commands like `docker run [options] <image>` or `docker images`. This was of the form:
 
 ```shell
 docker <command> (options)
