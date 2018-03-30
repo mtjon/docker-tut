@@ -3,7 +3,7 @@ version: '3.1'
 services:
   jupyter:
     build:
-      context: ${JUPYTER_BUILD_DIR}
+      context: ${JUPYTER_BUILDCONTEXT}
       dockerfile: ${JUPYTER_DOCKERFILE}
     image: mtjon/redis-notebook
     ports:

@@ -11,3 +11,10 @@ RUN conda install -y -q \
     redis-py && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
+
+RUN conda install -y -q -c damianavila82 \
+    rise && \
+    conda clean -tipsy && \
+    fix-permissions $CONDA_DIR
+
+WORKDIR $HOME/work/
